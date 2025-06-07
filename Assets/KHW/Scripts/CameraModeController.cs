@@ -7,6 +7,7 @@ public class CameraModeController : MonoBehaviour
 {
     // public GameObject cameraModel;
     public GameObject cameraUI; 
+    public GameObject cameraModel;
 
     public InputActionProperty gripAction;   
 
@@ -37,8 +38,8 @@ public class CameraModeController : MonoBehaviour
         if (IsActive) return;
         IsActive = true;
 
-        // 시각 요소 온
         cameraUI.SetActive(true);
+        cameraModel.SetActive(false);
         TutorialManager.Instance?.OnRightGrabDone();
     }
 
@@ -47,7 +48,7 @@ public class CameraModeController : MonoBehaviour
         if (!IsActive) return;
         IsActive = false;
 
-        // UI 끄기
         cameraUI.SetActive(false);
+        cameraModel.SetActive(true);
     }
 }
